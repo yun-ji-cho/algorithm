@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+      <!-- 내가 푼거 -->
+        <!-- <script>
+            function solution(arr){  
+              let answer;
+              //가로
+              let sum = (x) => x.reduce((a, b) => a + b);
+              let max = sum(arr[0]);
+              for(let x of arr){
+                if(sum(x) > max) max = sum(x);
+              }
+
+              //세로
+              let sum2 = 0;
+              for(let j = 0; j < arr[0].length; j++){
+                for(let i = 0; i < arr.length; i++){
+                  sum2 += arr[i][j];
+                }
+                if(sum2 > max) max = sum2;
+                sum2 = 0;
+              }
+
+              //대각선 (좌 => 우)
+              let sum3 = 0;
+              for(let k = 0; k < arr.length; k++){
+                sum3 += arr[k][k];
+              }
+              if(sum3 > max) max = sum3;
+
+              //대각선 (우 => 좌)
+              let sum4 = 0;
+              for(let a = 0; a < arr.length; a++){
+                for(let b = 0; b < arr.length; b++){
+                  if(a + b === 4){
+                    sum4 += arr[a][b];
+                  }
+                }
+              }
+              if(sum4 > max) max = sum4;
+              
+
+              answer = max;
+              return answer;
+            }
+            let arr=[[10, 13, 10, 12, 15], 
+                     [12, 39, 30, 23, 11],
+                     [11, 25, 50, 53, 15],
+                     [19, 27, 29, 37, 27],
+                     [19, 13, 30, 13, 19]];
+            console.log(solution(arr));
+        </script> -->
+
+        <!-- 쌤이 푼거 -->
+        <script>
+          function solution(arr){  
+              let answer = Number.MIN_SAFE_INTEGER;
+              let n = arr.length;
+              let sum1 = sum2 = 0;
+
+              for(let i = 0; i < n;  i++){
+                sum1 = sum2 = 0;
+                for (let j = 0; j < n; j++){
+                  sum1+=arr[i][j];
+                  sum2+=arr[j][i];
+                }
+                answer = Math.max(answer, sum1, sum2);
+              }
+              sum1 = sum2 = 0;
+              for(let i = 0; i < n; i++){
+                sum1+=arr[i][i];
+                sum2+=arr[i][n-i-1];
+              }
+
+              answer = Math.max(answer, sum1, sum2);
+
+              return answer;
+            }
+            let arr=[[10, 13, 10, 12, 15], 
+                     [12, 39, 30, 23, 11],
+                     [11, 25, 50, 53, 15],
+                     [19, 27, 29, 37, 27],
+                     [19, 13, 30, 13, 19]];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>

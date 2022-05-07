@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+      <!-- 내가 한거 -->
+        <!-- <script>
+            function solution(s){
+              let answer = 'no';
+              let trans = s.toLowerCase();
+              let n = trans.length;
+              let loop = Math.floor(trans.length/2);
+
+              let flag = 1;
+                for(let i = 0; i < loop; i++){
+                  if(trans[i] !== trans[n - 1 - i]){
+                    flag = 0;
+                    break;
+                  }
+                }
+                if(flag) answer = 'yes';
+
+              return answer;
+            }
+            
+            let str="gottog";
+            console.log(solution(str));
+        </script> -->
+
+      <!-- 쌤이 한거 1 : 반복문 -->
+        <!-- <script>
+            function solution(s){
+              let answer = 'yes';
+              s = s.toLowerCase();
+              let len = s.length;
+              for(let i = 0; i < Math.floor(len/2); i++){
+                if(s[i] !== s[len - 1 - i]) return "NO";
+              }
+              return answer;
+            }
+            
+            let str="gog";
+            console.log(solution(str));
+        </script> -->
+
+
+        <!-- 쌤이 한거 2 : reverse 함수 사용 -->
+        <script>
+          function solution(s){
+            let answer = 'yes';
+            s = s.toLowerCase();
+            if(s.split('').reverse().join() !== s) return 'No'
+            return answer;
+          }
+          
+          let str="doaoG";
+          console.log(solution(str));
+        </script>
+    </body>
+</html>
+

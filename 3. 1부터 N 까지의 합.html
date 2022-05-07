@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>1부터 N까지 합 출력하기</title>
+    </head>
+    <body>
+        <p>자연수 N이 입력되면 1부터 N까지의 합을 출력하는 프로그램을 작성하세요. </p>
+        <ul>
+          <li><span>입력설명</span>첫 번째 줄에 20이하의 자연수 N이 입력된다</li>
+          <li><span>출력설명</span>첫 번째 줄에 1부터 N까지의 합을 출력한다.
+          </li>
+  
+          <li><span>입력예제1 </span>6</li>
+          <li><span>출력예제1 </span>21</li>
+
+          <li><span>입력예제1 </span>10</li>
+          <li><span>출력예제1 </span>55</li>
+  
+        </ul>
+        <script>
+            function solution(n){
+              let array = Array(n).fill(1).map((v, i) => {return v = i + 1});
+              let answer = array.reduce((acc, cur) => {
+                 return acc + cur;
+              });
+
+              return answer;
+            }
+            console.log(solution(10));
+        </script>
+    </body>
+</html>

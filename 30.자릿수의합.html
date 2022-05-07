@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <!-- 내가 푼거 -->
+        <!-- <script>
+            function solution(n, arr){
+                let answer = arr[0];
+                let max = Number.MIN_SAFE_INTEGER;
+                for(let x of arr){
+                    let sum = String(x).split('').map(a => +a).reduce((a,b) => a+b);
+                    if(sum >= max) {
+                        max = sum;
+                        answer = Math.max(answer, x);
+                    }
+                }
+
+                return answer;
+            }
+            
+            let arr=[128, 460, 603, 40, 521, 137, 123];
+            console.log(solution(7, arr));
+        </script> -->
+        <!-- 쌤이 푼거 : 숫자 자체를 가지고  -->
+        <!-- <script>
+            function solution(n, arr){
+                let answer = arr[0];
+                let max = Number.MIN_SAFE_INTEGER;
+                for(let x of arr){
+                    let sum = 0, tmp = x;
+                    while(tmp){
+                        sum += (tmp%10);
+                        tmp = Math.floor(tmp/10);
+                    }
+                    if(sum > max){
+                        max = sum;
+                        answer = x;
+                    }else if(sum === max){
+                        if(x > answer) answer = x;
+                    }
+                }
+
+                return answer;
+            }
+            
+            let arr=[128, 460, 603, 40, 521, 137, 123];
+            console.log(solution(7, arr));
+        </script> -->
+
+        <!-- 쌤이 푼거 : 배열메서드를 가지고  -->
+        <script>
+            function solution(n, arr){
+                let answer = arr[0];
+                let max = Number.MIN_SAFE_INTEGER;
+                for(let x of arr){
+                    let sum = x.toString().split('').reduce((a,b) => a+Number(b), 0);
+                    if(sum > max){
+                        max = sum;
+                        answer = x;
+                    }else if(sum === max){
+                        if(x > answer) answer = x;
+                    }
+
+                }
+
+                return answer;
+            }
+            
+            let arr=[128, 460, 603, 40, 521, 137, 123];
+            console.log(solution(7, arr));
+        </script>
+    </body>
+</html>

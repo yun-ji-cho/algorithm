@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+      <!-- 내가한거 -->
+        <!-- <script>
+            function solution(arr){  
+                let answer;
+                let newArr = [...arr].sort((a,b) => (b - a));
+                let rankArr = [];
+                rankArr.push(1);
+                for(let i = 1; i < newArr.length; i++){
+                  if(newArr[i]===newArr[i-1]) rankArr.push(rankArr[i-1]);
+                  else rankArr.push(i+1);
+                }
+
+                answer = arr.map(function(v, i){
+                  return newArr.indexOf(v) + 1;
+                })
+                return answer;
+            }
+
+            let arr=[87, 89, 92, 100, 76];
+            console.log(solution(arr));
+        </script> -->
+
+        <!-- 내가 쌤의 힌트 듣고 한거 -->
+        <script>
+            function solution(arr){  
+              let answer = Array(arr.length).fill(1);
+              for(let i = 0; i < arr.length; i++){
+                for(let j = 0; j < arr.length; j++){
+                  if(arr[i] < arr[j]){
+                    answer[i]++;
+                  }
+                }
+              }
+              return answer;
+            }
+
+            let arr=[87, 89, 92, 100, 76];
+            console.log(solution(arr));
+        </script>
+
+        <!-- 쌤이한거 -->
+        <script>
+            function solution(arr){  
+              let n = arr.length;
+              let answer = Array.from({length:n}, () => 1);
+              for(let i = 0; i < n; i++){
+                for(let j = 0; j < n; j++){
+                  if(arr[i] < arr[j]){
+                    answer[i]++;
+                  }
+                }
+              }
+              return answer;
+            }
+
+            let arr=[87, 89, 92, 100, 76];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>

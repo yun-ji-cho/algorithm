@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 내가 한거 -->
+    <!-- <script>
+        function solution(str){
+          let answer;
+          str = str.replace(/[^0-9]/g, "");
+          answer = +str;
+
+          return answer;
+        }
+        
+        let str="g0en2T0s8eSoft";
+        console.log(solution(str));
+    </script> -->
+  <!-- 쌤이 한거 -->
+    <!-- <script>
+        function solution(str){
+          let answer = "";
+          for(let x of str){
+            if(!isNaN(x)) answer+=x;
+          }
+
+          return parseInt(answer);
+        }
+        
+        let str="g0en2T0s8eSoft";
+        console.log(solution(str));
+    </script> -->
+  <!-- 쌤이 한거 : parseInt 안쓰고 하기 -->
+    <script>
+        function solution(str){
+          let answer = 0;
+          for(let x of str){
+            if(!isNaN(x)) answer = answer*10 + Number(x);
+          }
+
+          return answer;
+        }
+        
+        let str="g0en2T0s8eSoft";
+        console.log(solution(str));
+    </script>
+</body>
+</html>

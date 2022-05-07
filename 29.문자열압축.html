@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <!-- <script>
+            function solution(s){
+                let answer=s[0];
+                let p = 1;
+                for(let i = 1; i < s.length; i++){
+                  if(s[i] === s[i-1]) {
+                    p++;
+                    if(i === s.length - 1){
+                      answer += p;
+                    }
+                  } 
+                  else {
+                    if(p !== 1) answer += p;
+                    p = 1;
+                    answer += s[i];
+                    
+                  }
+                }
+               
+                return answer;
+            }
+            
+            let str="QQQQKKHSSSSSSSEKKOODDDD";
+            console.log(solution(str));
+        </script> -->
+        <script>
+            function solution(s){
+                let answer="";
+                let cnt = 1;
+                s = s+" ";
+                for(let i = 1; i < s.length - 1; i++){
+                  if(s[i] === s[i+1]) {
+                    cnt++;
+
+                  } 
+                  else {
+                    if(cnt > 1) answer += String(cnt);
+                    answer += s[i];
+                    cnt = 1;
+                    
+                  }
+                }
+               
+                return answer;
+            }
+            
+            let str="QQQQKKHSSSSSSSEKKOODDDD";
+            console.log(solution(str));
+        
+        </script>
+    </body>
+</html>

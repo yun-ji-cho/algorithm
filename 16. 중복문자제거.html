@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 내가 한거 -->
+    <!-- <script>
+        function solution(s){  
+          let answer ="";
+          let arr = [...s];
+          let newArr = [];
+          for(let x of arr){
+            if(newArr.indexOf(x) < 0) newArr.push(x);
+          }
+          answer = newArr.join('');
+          return answer;
+        }
+        console.log(solution("ksekkset"));
+    </script> -->
+    
+    <!-- <script>
+      function solution(s){  
+        let answer ="";
+        for(let x of s){
+          if(answer.indexOf(x) < 0) answer += x;
+        }
+        return answer;
+      }
+      console.log(solution("ksekkset"));
+    </script> -->
+
+    <!-- 쌤이한거 , String 에서도 배열 메서드(indexOf)를 쓸 수 있다.-->
+    <!-- <script>
+      function solution(s){  
+        let answer ="";
+
+        for(let i = 0; i <s.length; i++){
+          if(s.indexOf(s[i])=== i) answer+= s[i]
+        
+        }
+        return answer;
+      }
+      console.log(solution("ksekkset"));
+    </script> -->
+
+    <!-- 특정 문자가 갯수가 몇개인가? -->
+    <script>
+    function solution(s){  
+        let answer =0;
+        let pos = s.indexOf('k');
+        while(pos !== -1){
+          answer++;
+          pos = s.indexOf('k', pos+1);
+        }
+
+        return answer;
+      }
+      console.log(solution("ksekkset"));
+    </script>
+</body>
+</html>
